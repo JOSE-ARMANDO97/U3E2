@@ -1,0 +1,79 @@
+package cola;
+
+import java.util.Scanner;
+
+public class SimulaCola {
+    
+    
+     Scanner leer = new Scanner(System.in);
+            
+   
+    private static String Simula [];
+    private String Palabra;
+    private int contador,Eliminar,aux1;
+    private int tamaño=5;
+   // 2. inicializo el arreglo
+   public SimulaCola(){
+ Simula= new String[tamaño];
+ contador=0;
+ Eliminar=5;
+   
+   }
+   //3. creando el metodo insertar
+   
+    public void insertar() {
+        
+        if(lleno()){ //verificar si esta llena para mostrar un mensaaje
+           System.out.println("YA NO PUEDES INGRESAR MAS DATOS ESTA LLLENA");
+        }else {//caso contrario pidiendo datos para la pila
+        System.out.println("INGRESE LA PALABRA ");
+        Palabra=leer.next();//guardando el la variable palabra
+      Simula[contador]=Palabra;//guardando con  el dato con el contador para la posiciones 
+           contador++;//incrementando para que contador cambien su valor alta la condicon del arreglo
+       }
+    }
+//crenado el metodo eliminar 
+    public  void elimilar(){
+    if(contador ==0){//verificamos si esta vacia para mostrar un mesaje
+     System.out.println( "YA NO PUEDES QUITAR POR QUE ESTA VACIA");
+    } else {
+        contador--;
+    
+            switch (contador) {
+                case 4:
+                    Simula[0]="";
+                    break;
+                case 3:
+                    Simula[1]="";
+                    break;
+                case 2:
+                    Simula[2]="";
+                    break;
+                case 1:
+                    Simula[3]="";
+                    break;
+                case 0:
+                    Simula[4]="";
+                    break;
+                default:
+                    break;
+            }
+          }
+    }
+    public  void getmostrar(){
+        //imprimiendo cada posicion al reverso
+        for(int i=0;i<Simula.length;i++){
+            System.out.println(Simula[i]);
+        }
+   }
+    //3 paso analizando las condiciones de la pila como si esta lllena
+public boolean lleno(){
+
+        return tamaño==contador;
+ }
+//paso analizando las condiciones de la pila como si esta vacia
+public boolean Vacio(){
+
+        return contador==0;
+}
+}
