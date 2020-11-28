@@ -1,0 +1,59 @@
+package Main;
+
+import cola.SimulaCola;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String ars[]){
+        Scanner leer = new Scanner(System.in);
+        SimulaCola F= new SimulaCola();
+        int menu = 0;
+        String frase;
+        boolean respuesta = true;
+        
+       while(respuesta){
+    try{
+    System.out.println("==============BIENVENIDO A LA SIMULACION DE PILA =================="+"\n"
+                  
+                  + "INGRESE EL TIPO DE OPERACION DE (1 al 5) "+"\n"
+                  + "1.INGRESA DATOS"+"\n"
+                  + "2. MOSTRAR"+"\n"
+                  + "3. ELIMINAR"+"\n"
+                  + "4. SALIR");
+    
+  menu=leer.nextInt();
+ 
+    
+  } catch(NumberFormatException a){
+          System.out.println("VALOR FUERA DE RANGO"+a.getMessage());
+       
+          }
+       
+       
+        switch (menu) {
+            case 1:
+                F.insertar();
+                
+                break;
+            case 2:
+              
+                F.getmostrar();
+                
+                break;
+            case 3:
+                F.elimilar();
+               
+                break;
+            case 4:
+                respuesta=false;
+                System.out.println("FUERA");
+                break;
+            default:
+                 System.out.println(" ERROR VALOR INVALIDO");
+                 break;
+                      
+         } 
+    }
+  }  
+    
+}
